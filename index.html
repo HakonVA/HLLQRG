@@ -1,48 +1,119 @@
-<!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Håkon Valnes Atlason</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Selector</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Håkon Valnes Atlason</h1>
-						<b>BSc Computer Science &nbsp;&bull;&nbsp; MSc Student &nbsp;&bull;&nbsp; Programmer</b>
-						<p>Hello, welcome to my page:)</p>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/hakon-atlason/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-								<li><a href="https://github.com/HakonVA" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="mailto:havaat@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+    .container {
+        max-width: 1000px;
+        margin: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
+    .button-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+    .button-container button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button-container button:hover {
+        background-color: #00000036;
+    }
+
+    /* Style specific buttons with class .red-button */
+    .button-container .red-button {
+        background-color: #e72222; /* Change background color to red */
+    }
+
+    .button-container .blue-button {
+        background-color: #3c28f5; /* Change background color to red */
+    }
+
+    #displayed-image {
+        text-align: center;
+    }
+
+    #displayed-image img {
+        max-width: 200%;
+        max-height: 1400px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    <h3 style="text-align: center;">HLL Offensive Mode Default Garrison Placement</h1>
+
+    <!-- Button container -->
+    <div class="button-container">
+        <!-- USA -->
+        <button onclick="displayImage('assets/Omaha Beach.jpeg')">Omaha Beach</button>
+        <button onclick="displayImage('assets/Utah Beach.jpeg')">Utah Beach</button>
+        <button onclick="displayImage('assets/SME.jpeg')">Ste-Mère-Église</button>
+        <button onclick="displayImage('assets/SMDM.jpeg')">Ste-Marie-du-Mont</button>
+        <button onclick="displayImage('assets/Purple Heart Lane.jpeg')">Purple Heart Lane</button>
+        <button onclick="displayImage('assets/Carentan.jpeg')">Carentan</button>
+        <button onclick="displayImage('assets/Foy.jpeg')">Foy</button>
+        <button onclick="displayImage('assets/Hill 400.jpeg')">Hill 400</button>
+        <button onclick="displayImage('assets/Hurtgen Forest.jpeg')">Hürtgen Forest</button>
+        <button onclick="displayImage('assets/Remagen.jpeg')">Remagen</button>
+        
+        <!-- UK -->
+        <button onclick="displayImage('assets/El Alamein.jpeg')" class="blue-button">El Alamein</button>
+        <button onclick="displayImage('assets/Driel.jpeg')" class="blue-button">Driel</button>
+        
+        <!-- USSR -->
+        <button onclick="displayImage('assets/Stalingrad.jpeg')" class="red-button">Stalingrad</button>
+        <button onclick="displayImage('assets/Kharkov.jpeg')" class="red-button">Kharkov</button>
+        <button onclick="displayImage('assets/Kursk.jpeg')" class="red-button">Kursk</button>
+    </div>
+
+    <!-- Displayed image -->
+    <div id="displayed-image">
+        <!-- Image will be displayed here -->
+    </div>
+</div>
+
+<script>
+    // Function to display the selected image
+    function displayImage(imageSrc) {
+        var displayedImage = document.getElementById('displayed-image');
+        displayedImage.innerHTML = `<img src="${imageSrc}" alt="Displayed Image">`;
+    }
+    // Display the first image by default when the page loads
+    window.onload = function() {
+        displayImage('assets/Omaha Beach.jpeg');
+    };
+</script>
+
+</body>
 </html>
