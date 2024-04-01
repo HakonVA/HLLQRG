@@ -1,148 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HLL Def Garries</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLL Def Garries</title>
+    <style>
+        .navbar {
+            height: 4vh;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            /* Align items to the start and end of the navbar */
+            align-items: center;
+        }
 
-    .container {
-        max-width: 1000px;
-        margin: 20px;
-        padding: 10px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .navbar-title {
+            color: white;
+            margin-left: 20px;
+            margin-right: 50%;
+        }
 
-    button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .button-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
 
-    .button-container button {
-        margin: 10px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-    .button-container button:hover {
-        background-color: #00000036;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    /* Style specific buttons with class .red-button */
-    .button-container .red-button {
-        background-color: #e72222; /* Change background color to red */
-    }
+        .container {
+            max-width: 1000px;
+            margin: 10px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .button-container .blue-button {
-        background-color: #3c28f5; /* Change background color to red */
-    }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    #displayed-image {
-        text-align: center;
-    }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    #displayed-image img {
-        max-width: 200%;
-        max-height: 1400px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+        .button-container button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .buttton {
-        float: right;
-        margin-right: 10px; /* Adjust as needed */
-        margin-bottom: 10px; /* Adjust as needed */
-    }
+        .button-container button:hover {
+            background-color: #00000036;
+        }
 
-    h1 {
-        margin: 0;
-        float: left;
-    }
+        /* Style specific buttons with class .red-button */
+        .button-container .red-button {
+            background-color: #e72222;
+            /* Change background color to red */
+        }
 
-    .buttton-container {
-        text-align: right; /* Aligns content to the right */
-        margin-bottom: 20px; /* Adjust as needed */
-    }
-</style>
+        .button-container .blue-button {
+            background-color: #3c28f5;
+            /* Change background color to red */
+        }
+
+        #displayed-image {
+            text-align: center;
+        }
+
+        #displayed-image img {
+            max-width: 200%;
+            max-height: 1400px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
+
 <body>
 
-
-<div class="container">
-    <!-- <h3 style="text-align: center;">HLL Offensive Mode Default Garrison Placement</h1> -->
-    <div class="buttton-container">
-        <h1>HLL Default Garries</h1>
-        <button onclick="window.location.href='calc.html';" class="buttton">HLL Arty Calc</button>
+    <div class="navbar">
+        <div class="navbar-title">HLLQRG</div>
+        <a href="#Artillery Calculator">Artillery Calculator</a>
+        <a href="#about">Default Garries</a>
+        <a href="#services">Bazooka Aiming</a>
     </div>
 
-    <!-- Button container -->
-    <div class="button-container">
-        <!-- USA -->
-        <button onclick="displayImage('assets/Omaha Beach.jpeg')">Omaha Beach</button>
-        <button onclick="displayImage('assets/Utah Beach.jpeg')">Utah Beach</button>
-        <button onclick="displayImage('assets/SME.jpeg')">Ste-Mère-Église</button>
-        <button onclick="displayImage('assets/SMDM.jpeg')">Ste-Marie-du-Mont</button>
-        <button onclick="displayImage('assets/Purple Heart Lane.jpeg')">Purple Heart Lane</button>
-        <button onclick="displayImage('assets/Carentan.jpeg')">Carentan</button>
-        <button onclick="displayImage('assets/Foy.jpeg')">Foy</button>
-        <button onclick="displayImage('assets/Hill 400.jpeg')">Hill 400</button>
-        <button onclick="displayImage('assets/Hurtgen Forest.jpeg')">Hürtgen Forest</button>
-        <button onclick="displayImage('assets/Remagen.jpeg')">Remagen</button>
-        
-        <!-- UK -->
-        <button onclick="displayImage('assets/El Alamein.jpeg')" class="blue-button">El Alamein</button>
-        <button onclick="displayImage('assets/Driel.jpeg')" class="blue-button">Driel</button>
-        
-        <!-- USSR -->
-        <button onclick="displayImage('assets/Stalingrad.jpeg')" class="red-button">Stalingrad</button>
-        <button onclick="displayImage('assets/Kharkov.jpeg')" class="red-button">Kharkov</button>
-        <button onclick="displayImage('assets/Kursk.jpeg')" class="red-button">Kursk</button>
+    <div class="container">
+        <!-- <h3 style="text-align: center;">HLL Offensive Mode Default Garrison Placement</h1> -->
+
+        <!-- Button container -->
+        <div class="button-container">
+            <!-- USA -->
+            <button onclick="displayImage('assets/Omaha Beach.jpeg')">Omaha Beach</button>
+            <button onclick="displayImage('assets/Utah Beach.jpeg')">Utah Beach</button>
+            <button onclick="displayImage('assets/SME.jpeg')">Ste-Mère-Église</button>
+            <button onclick="displayImage('assets/SMDM.jpeg')">Ste-Marie-du-Mont</button>
+            <button onclick="displayImage('assets/Purple Heart Lane.jpeg')">Purple Heart Lane</button>
+            <button onclick="displayImage('assets/Carentan.jpeg')">Carentan</button>
+            <button onclick="displayImage('assets/Foy.jpeg')">Foy</button>
+            <button onclick="displayImage('assets/Hill 400.jpeg')">Hill 400</button>
+            <button onclick="displayImage('assets/Hurtgen Forest.jpeg')">Hürtgen Forest</button>
+            <button onclick="displayImage('assets/Remagen.jpeg')">Remagen</button>
+
+            <!-- UK -->
+            <button onclick="displayImage('assets/El Alamein.jpeg')" class="blue-button">El Alamein</button>
+            <button onclick="displayImage('assets/Driel.jpeg')" class="blue-button">Driel</button>
+
+            <!-- USSR -->
+            <button onclick="displayImage('assets/Stalingrad.jpeg')" class="red-button">Stalingrad</button>
+            <button onclick="displayImage('assets/Kharkov.jpeg')" class="red-button">Kharkov</button>
+            <button onclick="displayImage('assets/Kursk.jpeg')" class="red-button">Kursk</button>
+        </div>
+
+        <!-- Displayed image -->
+        <div id="displayed-image">
+            <!-- Image will be displayed here -->
+        </div>
     </div>
 
-    <!-- Displayed image -->
-    <div id="displayed-image">
-        <!-- Image will be displayed here -->
-    </div>
-</div>
-
-<script>
-    // Function to display the selected image
-    function displayImage(imageSrc) {
-        var displayedImage = document.getElementById('displayed-image');
-        displayedImage.innerHTML = `<img src="${imageSrc}" alt="Displayed Image">`;
-    }
-    // Display the first image by default when the page loads
-    window.onload = function() {
-        displayImage('assets/Omaha Beach.jpeg');
-    };
-</script>
+    <script>
+        // Function to display the selected image
+        function displayImage(imageSrc) {
+            var displayedImage = document.getElementById('displayed-image');
+            displayedImage.innerHTML = `<img src="${imageSrc}" alt="Displayed Image">`;
+        }
+        // Display the first image by default when the page loads
+        window.onload = function () {
+            displayImage('assets/Omaha Beach.jpeg');
+        };
+    </script>
 
 </body>
+
 </html>
