@@ -1,1 +1,1 @@
-# [HakonVA.github.io](https://github.com/HakonVA/HLLQRG/)
+# [Visit Website](https://hakonva.github.io/HLLQRG/index.html)
